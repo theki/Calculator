@@ -19,5 +19,6 @@ class MultiplicationTest extends PHPUnit_Framework_TestCase
     {
         $mult = new Multiplication();
         $this->assertEquals(12, $mult->calculate(3, 4));
+        $this->assertEquals(-12, $mult->calculate(3, -4));
     }
 }

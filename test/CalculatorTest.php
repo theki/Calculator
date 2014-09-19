@@ -19,5 +19,17 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
     {
         $calc = new Calculator('2*5+3*10*2-4*3');
         $this->assertEquals(58, $calc->calculate());
+
+        $calc = new Calculator('(2+3)*(4-5)');
+        $this->assertEquals(-5, $calc->calculate());
+
+        $calc = new Calculator('-(2+3)*(4-5)');
+        $this->assertEquals(5, $calc->calculate());
+
+        $calc = new Calculator('-4*(2+3)*(4-5)');
+        $this->assertEquals(20, $calc->calculate());
+
+        $calc = new Calculator('-4*(2+3)*(4-5)/4');
+        $this->assertEquals(5, $calc->calculate());
     }
 }

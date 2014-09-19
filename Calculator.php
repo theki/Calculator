@@ -7,6 +7,8 @@
  */
 
 require_once 'Parser.php';
+require_once 'InfixToRPNconverter.php';
+require_once 'RPN.php';
 
 class Calculator
 {
@@ -19,8 +21,27 @@ class Calculator
 
     public function calculate()
     {
+        $this->parse();
+        $rpnData = $this->preparePostfixNotation();
+        return $this->calculateRPN($rpnData);
+    }
+
+    private function parse()
+    {
         $parser = new Parser();
         $parser->validate($this->formula);
-        return $parser->parse($this->formula);
+        $this->formula = $parser->parse($this->formula);
+    }
+
+    private function preparePostfixNotation()
+    {
+        $converter = new InfixToRPNconverter();
+        return $converter->convertInfixToRPN($this->formula);
+    }
+
+    private function calculateRPN($rpnData)
+    {
+        $rpn = new RPN();
+        return $rpn->calculate($rpnData);
     }
 }

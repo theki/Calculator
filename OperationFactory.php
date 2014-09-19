@@ -8,12 +8,14 @@
 require_once 'Addition.php';
 require_once 'Subtraction.php';
 require_once 'Multiplication.php';
+require_once 'Division.php';
 
 class OperationFactory
 {
     const OPERATION_ADDITION = '+';
     const OPERATION_SUBTRACTION = '-';
     const OPERATION_MULTIPLICATION = '*';
+    const OPERATION_DIVISION = '/';
 
     public static function createOperation($type)
     {
@@ -26,6 +28,9 @@ class OperationFactory
                 break;
             case self::OPERATION_MULTIPLICATION:
                 return new Multiplication();
+                break;
+            case self::OPERATION_DIVISION:
+                return new Division();
                 break;
             default:
                 return null;
