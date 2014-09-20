@@ -3,8 +3,10 @@ Calculator
 
 Simple Calculator implementation to perform +,-,*,/ operations based on Reverse Polish Notation (http://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
-It convert formula from infix notation e.g. (2-1)*(3-1)+5-(3-2)*(3-1)
-to postfix notation (RPN): 2 1 - 3 1 - * 5 + 3 2 - 3 1 - * -
+It convert formula from infix notation e.g. 
+(2-1)*(3-1)+5-(3-2)*(3-1)
+to postfix notation (RPN): 
+2 1 - 3 1 - * 5 + 3 2 - 3 1 - * -
 using Shunting-yard algorithm: http://en.wikipedia.org/wiki/Shunting-yard_algorithm
 
 There are couple of rules for conversion:
