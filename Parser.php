@@ -20,6 +20,7 @@ class Parser {
 
     public function parse($formula)
     {
+        $formula = preg_replace('/\s/', '', $formula);
         $formula = preg_replace('/^-\(/', '(0-1)*(', $formula);
         $formula = preg_replace('/^-(\d+)/', '(0-${1})', $formula);
         $formula = preg_replace('/\(-(\d+)\)/', '(0-${1})', $formula);

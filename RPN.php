@@ -8,6 +8,11 @@
 
 require_once 'OperationFactory.php';
 
+/**
+ * Class RPN (Riverse Polish Notation
+ * perform arythmetic operation
+ * use Factory Method to create operation classes
+ */
 class RPN {
 
     public function calculate($expression)

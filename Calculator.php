@@ -36,7 +36,7 @@ class Calculator
     private function preparePostfixNotation()
     {
         $converter = new InfixToRPNconverter();
-        return $converter->convertInfixToRPN($this->formula);
+        return $converter->convert($this->formula);
     }
 
     private function calculateRPN($rpnData)

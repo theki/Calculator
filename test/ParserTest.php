@@ -39,6 +39,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
     public function testParse()
     {
         $parser = new Parser();
+        $this->assertEquals('(0-1)*(1+2)', $parser->parse(' - ( 1 + 2   ) '));
         $this->assertEquals('(0-1)*(1+2)', $parser->parse('-(1+2)'));
         $this->assertEquals('(0-3)*(1+2)', $parser->parse('-3*(1+2)'));
         $this->assertEquals('2*(0-3)*(1+2)', $parser->parse('2*(-3)*(1+2)'));
