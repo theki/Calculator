@@ -5,7 +5,7 @@ Simple Calculator implementation to perform +,-,*,/ operations based on Reverse 
 
 (http://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
-It convert formula from infix notation e.g. 
+It converts formula from infix notation e.g. 
 
 (2-1)*(3-1)+5-(3-2)*(3-1)
 
